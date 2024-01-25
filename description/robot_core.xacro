@@ -7,16 +7,16 @@
     <xacro:property name="chassis_radius" value="0.292375"/>
     <xacro:property name="chassis_height" value="0.663103892"/>
     <xacro:property name="chassis_mass" value="13.0"/>
-    <xacro:property name="wheel_radius" value="0.1"/>
+    <xacro:property name="wheel_radius" value="0.05"/>
     <xacro:property name="wheel_thickness" value="0.025"/>
     <xacro:property name="wheel_mass" value="0.2494"/>
     <xacro:property name="wheel_offset_x" value="0.0"/>
     <xacro:property name="wheel_offset_y" value="0.165"/>
     <xacro:property name="wheel_offset_z" value="0.01"/>
-    <xacro:property name="caster_wheel_radius" value="0.022122419"/>
+    <xacro:property name="caster_wheel_radius" value="0.04"/>
     <xacro:property name="caster_wheel_mass" value="0.073417"/>
     <xacro:property name="caster_wheel_offset_x" value="0.1779"/>
-    <xacro:property name="caster_wheel_offset_z" value="0.005"/>
+    <xacro:property name="caster_wheel_offset_z" value="0"/>
 
     <material name="white">
         <color rgba="1 1 1 1" />
@@ -109,7 +109,7 @@
         </visual>
         <collision>
             <geometry>
-                <sphere radius="${wheel_radius}"/>
+                <cylinder radius="${wheel_radius}" length="${wheel_thickness}"/>
             </geometry>
         </collision>
         <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_thickness}" radius="${wheel_radius}">
@@ -142,7 +142,7 @@
         </visual>
         <collision>
             <geometry>
-                <sphere radius="${wheel_radius}"/>
+                <cylinder radius="${wheel_radius}" length="${wheel_thickness}"/>
             </geometry>
         </collision>
         <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_thickness}" radius="${wheel_radius}">
@@ -183,8 +183,8 @@
 
     <gazebo reference="caster_wheel_forward">
         <material>Gazebo/White</material>
-        <mu1 value="0.001"/>
-        <mu2 value="0.001"/>
+        <mu1 value="0.002"/>
+        <mu2 value="0.002"/>
     </gazebo>
    <!-- CASTER WHEEL LINK BACKWARD-->
 
@@ -212,10 +212,10 @@
         </xacro:inertial_sphere>
     </link>
 
-    <gazebo reference="caster_wheel">
+    <gazebo reference="caster_wheel_backward">
         <material>Gazebo/White</material>
-        <mu1 value="0.001"/>
-        <mu2 value="0.001"/>
+        <mu1 value="0.002"/>
+        <mu2 value="0.002"/>
     </gazebo>
 
 </robot>
