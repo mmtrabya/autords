@@ -1,7 +1,19 @@
-## Robot Package Template
+# Autonomous SLAM Robot for Hospital Mapping and Delivery (NixBot)
 
-This is a GitHub template. You can make your own copy by clicking the green "Use this template" button.
+## Overview
 
-It is recommended that you keep the repo/package name the same, but if you do change it, ensure you do a "Find all" using your IDE (or the built-in GitHub IDE by hitting the `.` key) and rename all instances of `autords` to whatever your project's name is.
+This project is aimed at developing an autonomous robot utilizing ROS 2 (Robot Operating System 2) for simultaneous localization and mapping (SLAM) in hospital environments. The robot is designed to navigate through hospital corridors, map its surroundings, and deliver items autonomously. 
 
-Note that each directory currently has at least one file in it to ensure that git tracks the files (and, consequently, that a fresh clone has direcctories present for CMake to find). These example files can be removed if required (and the directories can be removed if `CMakeLists.txt` is adjusted accordingly).
+## Features
+
+- **SLAM (Simultaneous Localization and Mapping)**: The robot employs SLAM algorithms to create a map of its environment while simultaneously determining its own position within that environment.
+  
+- **Autonomous Navigation**: Utilizing sensor data and mapping information, the robot navigates autonomously through hospital corridors and rooms, avoiding obstacles and dynamically planning paths.
+  
+- **Delivery System**: The robot is equipped with a delivery mechanism to transport items within the hospital premises. It is capable of picking up and dropping off items at designated locations.
+
+## Prerequisites
+
+- **ROS 2**: Ensure that ROS 2 is installed on your system. You can refer to the [ROS 2 installation instructions](https://index.ros.org/doc/ros2/Installation/) for guidance.
+
+- **Hardware**: The project may require specific hardware components such as Raspberry Pi 4B, LiDAR, motor controllers (Arduino), and a mobile base. Ensure that the hardware setup is compatible and properly configured.
