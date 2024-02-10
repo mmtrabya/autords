@@ -11,7 +11,7 @@ def generate_launch_description():
 
     joy_params = os.path.join(get_package_share_directory('autords'),'config','joystick.yaml')
 
-    joy_node = Node(
+    #joy_node = Node(
             package='joy',
             executable='joy_node',
             parameters=[joy_params, {'use_sim_time': use_sim_time}],
